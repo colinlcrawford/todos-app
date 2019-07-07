@@ -6,9 +6,9 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node src/index.js",
     "dev": "cross-env NODE_ENV=dev nodemon src/index.js",
-    "test": "lab src tests/e2e --pattern spec --verbose",
-    "test:unit": "lab src --pattern spec --verbose",
-    "test:e2e": "lab tests/e2e --pattern spec --verbose -I '__core-js_shared__,core,CSS'",
+    "test": "lab src tests/e2e --pattern spec --verbose -L",
+    "test:unit": "lab src --pattern spec --verbose -L",
+    "test:e2e": "lab tests/e2e --pattern spec --verbose -I '__core-js_shared__,core,CSS' -L",
     "create-couchdb-admin": "node scripts/create-couchdb-admin.js",
     "create-couchdb-db": "node scripts/create-couchdb-db.js",
     "create-couchdb-user": "node scripts/create-couchdb-user.js"
