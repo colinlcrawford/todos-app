@@ -1,0 +1,59 @@
+{
+  "name": "hapi-api",
+  "version": "1.0.0",
+  "description": "todos api",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node src/index.js",
+    "dev": "cross-env NODE_ENV=dev nodemon src/index.js",
+    "test": "lab src tests/e2e --pattern spec --verbose",
+    "test:unit": "lab src --pattern spec --verbose",
+    "test:e2e": "lab tests/e2e --pattern spec --verbose -I '__core-js_shared__,core,CSS'",
+    "create-couchdb-admin": "node scripts/create-couchdb-admin.js",
+    "create-couchdb-db": "node scripts/create-couchdb-db.js",
+    "create-couchdb-user": "node scripts/create-couchdb-user.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colinlcrawford/todos.git"
+  },
+  "keywords": [
+    "todo"
+  ],
+  "author": "colin crawford",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/colinlcrawford/todos/issues"
+  },
+  "homepage": "https://github.com/colinlcrawford/todos#readme",
+  "dependencies": {
+    "@hapi/glue": "^6.1.0",
+    "@hapi/good": "^8.2.0",
+    "@hapi/good-console": "^8.1.0",
+    "@hapi/good-squeeze": "^5.2.0",
+    "@hapi/hapi": "^18.3.1",
+    "@hapi/inert": "^5.2.1",
+    "@hapi/joi": "^15.1.0",
+    "@hapi/vision": "^5.5.2",
+    "axios": "^0.19.0",
+    "blipp": "^4.0.0",
+    "cross-env": "^5.2.0",
+    "dotenv": "^8.0.0",
+    "hapi-pino": "^6.0.1",
+    "hapi-swagger": "^10.0.2",
+    "http-status-codes": "^1.3.2",
+    "nano": "^8.1.0",
+    "ramda": "^0.26.1"
+  },
+  "devDependencies": {
+    "@hapi/code": "^5.3.1",
+    "@hapi/lab": "^19.1.0",
+    "eslint": "^6.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "nodemon": "^1.19.1"
+  }
+}
