@@ -20,25 +20,6 @@ const hapiSwaggerOptions = {
   securityDefinitions: {}
 }
 
-const hapiGoodOptions = {
-  ops: {
-    interval: 1000
-  },
-  reporters: {
-    myConsoleReporter: [
-      {
-        module: '@hapi/good-squeeze',
-        name: 'Squeeze',
-        args: [{ log: '*', response: '*' }]
-      },
-      {
-        module: '@hapi/good-console'
-      },
-      ...(process.env.NODE_ENV === 'test' ? [] : ['stdout'])
-    ]
-  }
-}
-
 const getManifest = ({ port, nodeEnv }) => ({
   server: {
     port,
@@ -54,10 +35,6 @@ const getManifest = ({ port, nodeEnv }) => ({
       {
         plugin: require('hapi-swagger'),
         options: hapiSwaggerOptions
-      },
-      {
-        plugin: require('@hapi/good'),
-        options: hapiGoodOptions
       },
       {
         plugin: require('hapi-pino'),
