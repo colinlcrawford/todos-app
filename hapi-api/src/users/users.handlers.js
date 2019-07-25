@@ -1,7 +1,7 @@
-async function loginHandler (request, h) {
-  return 'success!'
+async function createAuthTokenHandler (request, h) {
+  return { token: 'success!' }
 }
 
 module.exports = {
-  loginHandler
+  createAuthTokenHandler
 }

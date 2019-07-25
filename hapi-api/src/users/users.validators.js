@@ -1,6 +1,6 @@
 const Joi = require('@hapi/joi')
 
-const loginValidators = {
+const createAuthTokenValidators = {
   payload: {
     email: Joi.string().max(100),
     password: Joi.string().max(100)
@@ -8,5 +8,5 @@ const loginValidators = {
 }
 
 module.exports = {
-  loginValidators
+  createAuthTokenValidators
 }

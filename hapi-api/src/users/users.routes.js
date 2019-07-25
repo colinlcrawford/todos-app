@@ -1,18 +1,18 @@
 const {
-  loginHandler
+  createAuthTokenHandler
 } = require('./users.handlers')
 
 const {
-  loginValidators
+  createAuthTokenValidators
 } = require('./users.validators')
 
 const registerRoutes = async (server, options) => {
   server.route({
-    method: 'GET',
-    path: '/todos',
-    handler: loginHandler,
+    method: 'POST',
+    path: '/token',
+    handler: createAuthTokenHandler,
     options: {
-      validate: loginValidators
+      validate: createAuthTokenValidators
     }
   })
 }
